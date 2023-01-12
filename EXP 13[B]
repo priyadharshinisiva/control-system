@@ -1,0 +1,94 @@
+--> clear;
+--> clc;
+--> xdel(winsid());
+Warning: Feature xdel(…) is obsolete and will be permanently removed in Scilab 6.2
+Warning: Please use close(…) instead.
+--> 
+--> s=%s;
+--> Htf=syslin('c',s,160+56*s+14*s^2+s^3);
+--> 
+--> Hss=tf2ss(Htf);
+--> 
+--> disp(Hss,'The obtained state space model for the given transfer function: State Equation x*=Ax+Bu, Output Equation Y=Cx+D');
+
+
+       (1)  (state-space system:)
+
+  "lss"  "A"  "B"  "C"  "D"  "X0"  "dt"
+
+       (2)= A matrix =
+
+   0.  -8.    0.
+   7.  -14.   5.
+   4.   0.    0.
+
+       (3)= B matrix =
+
+   0.
+   1.
+   0.
+
+       (4)= C matrix =
+
+  -0.125   0.   0.
+
+       (5)= D matrix =
+
+   0.
+
+       (6)= X0 (initial state) =
+
+   0.
+   0.
+   0.
+
+       (7)= Time domain =
+
+  "c"
+
+  "The obtained state space model for the given transfer function: State Equation x*=Ax+Bu, Output Equation Y=Cx+D"
+--> 
+--> //To print the answer, Use 
+--> //ssprint(Hss)
+--> //Alternate: 
+--> 
+--> [A,B,C,D]=abcd(Htf)
+ A  = 
+   0.  -8.    0.
+   7.  -14.   5.
+   4.   0.    0.
+ B  = 
+   0.
+   1.
+   0.
+ C  = 
+  -0.125   0.   0.
+ D  = 
+   0.
+--> 
+--> //To cross check, Use
+--> //Htf2=clean(ss2tf(Hss)) //which matches with Htf
+--> 
+--> disp(D,'D=',C,'C=',B,'B=',A,'A=');
+
+   0.
+
+  "D="
+
+  -0.125   0.   0.
+
+  "C="
+
+   0.
+   1.
+   0.
+
+  "B="
+
+   0.  -8.    0.
+   7.  -14.   5.
+   4.   0.    0.
+
+  "A="
+--> 
+--> 
