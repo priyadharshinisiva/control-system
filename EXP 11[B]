@@ -1,0 +1,29 @@
+clear;
+
+--> clc;
+
+--> xdel(winsid()); //close all windows
+Warning: Feature xdel(…) is obsolete and will be permanently removed in Scilab 6.2
+Warning: Please use close(…) instead.
+
+--> s=%s;
+
+--> T=syslin('c',25+30*s+5*s^2,168+206*s+89*s^2+16*s^3+s^4);
+
+--> disp(T, 'The given loop transfer function G(s)H(s) = ');
+
+         25 +30s +5s²         
+   -------------------------  
+   168 +206s +89s² +16s³ +s⁴  
+
+  "The given loop transfer function G(s)H(s) = "
+
+--> nyquist(T)
+
+--> a=gca();
+
+--> a.clip_state='on';
+
+--> a.data_bounds=[-0.1 -0.2;0.3 0.2];
+
+--> a.box='on';
