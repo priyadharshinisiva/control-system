@@ -1,0 +1,38 @@
+--> clear;
+
+--> clc;
+
+--> xdel(winsid());
+Warning: Feature xdel(…) is obsolete and will be permanently removed in Scilab 6.2
+Warning: Please use close(…) instead.
+
+--> s=%s/2/%pi;
+
+--> G=syslin('c',20*(s^2+s+0.5),s*(s+1)*(s+10));
+
+--> disp(G,'The given transfer function G(s)=')
+
+       10 +3.1830989s +0.5066059s²       
+   ------------------------------------  
+   1.5915494s +0.2786333s² +0.0040314s³  
+
+  "The given transfer function G(s)="
+
+--> a=gca();
+
+--> a.clip_state='on';
+
+set: The handle is not or no more valid.
+
+--> nyquist(G,-1000,1000);
+operation +: Warning adding a matrix with the empty matrix will give an empty matrix result.
+
+--> xgrid(color('gray'));
+
+--> a.data_bounds=[-1 -3;3 3];
+
+set: The handle is not or no more valid.
+
+--> box='on';
+
+--> 
