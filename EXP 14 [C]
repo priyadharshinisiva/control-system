@@ -1,0 +1,109 @@
+A=[0 1;-25 -4];
+
+--> B=[1 1;0 1];
+
+--> C=[1 0;0 1];
+
+--> D=[0 0;0 0];
+
+--> 
+
+--> H=syslin('c',A,B,C,D);
+
+--> 
+
+--> disp(H,'The given state model matrices are');
+
+
+       (1)  (state-space system:)
+
+  "lss"  "A"  "B"  "C"  "D"  "X0"  "dt"
+
+       (2)= A matrix =
+
+   0.    1.
+  -25.  -4.
+
+       (3)= B matrix =
+
+   1.   1.
+   0.   1.
+
+       (4)= C matrix =
+
+   1.   0.
+   0.   1.
+
+       (5)= D matrix =
+
+   0.   0.
+   0.   0.
+
+       (6)= X0 (initial state) =
+
+   0.
+   0.
+
+       (7)= Time domain =
+
+  "c"
+
+  "The given state model matrices are"
+
+--> disp(A,'A='); 
+
+   0.    1.
+  -25.  -4.
+
+  "A="
+
+--> disp(B,'B=');
+
+   1.   1.
+   0.   1.
+
+  "B="
+
+--> disp(C,'C=');
+
+   1.   0.
+   0.   1.
+
+  "C="
+
+--> disp(D,'D=');
+
+   0.   0.
+   0.   0.
+
+  "D="
+
+--> 
+
+--> G=clean(ss2tf(H));
+
+--> disp(G,'The obtained transfer functions are');
+
+      4 +s       5 +1s     
+   ----------  ----------  
+   25 +4s +s²  25 +4s +s²  
+                           
+      -25        -25 +s    
+   ----------  ----------  
+   25 +4s +s²  25 +4s +s²  
+
+  "The obtained transfer functions are"
+
+--> 
+
+--> 
+
+--> 
+
+--> 
+
+--> 
+
+--> 
+
+--> 
