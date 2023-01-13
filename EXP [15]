@@ -1,0 +1,79 @@
+-> clear;
+
+--> xdel(winsid());
+Warning: Feature xdel(…) is obsolete and will be permanently removed in Scilab 6.2
+Warning: Please use close(…) instead.
+
+--> 
+
+--> cd"C:\Users\admin\Documents\Scilab"
+
+cd: Cannot go to directory C:\Users\admin\Documents\Scilab
+
+--> exec("pf_residue.sci")
+
+exec: Cannot open file pf_residue.sci.
+
+--> s=%s;
+
+--> N=s+3;
+
+--> D=s^2+3*s+2;
+
+--> Hc=cont_frm(N,D);
+
+--> disp('Controllable form ='); 
+
+  "Controllable form ="
+
+--> ssprint(Hc);
+
++   | 0  1 |    | 0 |
+x = |-2 -3 |x + | 1 |u
+
+y = | 3  1 |x
+
+--> 
+
+--> Ho=syslin('c',(Hc.A)',(Hc.C)',(Hc.B)',Hc.D);
+
+--> disp('Observable form ='); 
+
+  "Observable form ="
+
+--> ssprint(Ho);
+
+.   | 0 -2 |    | 3 |
+x = | 1 -3 |x + | 1 |u
+
+y = | 0  1 |x
+
+--> 
+
+--> A=diag(roots(D));
+
+--> B=[1;1];
+
+--> C=pf_residue(N,D)';
+
+Undefined variable: pf_residue
+
+--> D=Hc.D;
+
+--> 
+
+--> Hj=syslin('c',A,B,C,D);
+
+Undefined variable: C
+
+--> disp('Jordan canonical form ='); 
+
+  "Jordan canonical form ="
+
+--> ssprint(Hj);
+
+Undefined variable: Hj
+
+--> 
+
+--> 
